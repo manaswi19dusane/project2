@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👥 All Customers - BankBuddy</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px;
+    }
+    .container {
+      background-color: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #0d6efd;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+    table {
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    th {
+      background-color: #0d6efd;
+      color: white;
+    }
+    tr:hover {
+      background-color: #f1f1f1;
+      transition: 0.2s;
+    }
+    .back-btn {
+      display: block;
+      width: 200px;
+      margin: 20px auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>👥 All Customers</h1>
+
+    <table class="table table-bordered text-center align-middle">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for customer in customers %}
+        <tr>
+          <td>{{ customer.Customer_ID }}</td>
+          <td>{{ customer.Name }}</td>
+          <td>{{ customer.Phone }}</td>
+          <td>{{ customer.Address }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <a href="/" class="btn btn-primary back-btn">🏠 Back to Home</a>
+  </div>
+</body>
+</html>

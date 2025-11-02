@@ -1,0 +1,13 @@
+<h1>Transactions</h1>
+<table border="1">
+<tr><th>ID</th><th>Account No</th><th>Type</th><th>Amount</th><th>Date</th></tr>
+{% for t in transactions %}
+<tr>
+    <td>{{ t.Trans_ID }}</td>
+    <td>{{ t.Account_No }}</td>
+    <td>{{ t.Trans_Type }}</td>
+    <td>{{ t.Amount }}</td>
+    <td>{{ t.Trans_Date }}</td>
+</tr>
+{% endfor %}
+</table>

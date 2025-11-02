@@ -1,0 +1,13 @@
+<h1>Accounts List</h1>
+<table border="1">
+<tr><th>Account No</th><th>Type</th><th>Balance</th><th>Customer</th><th>Branch</th></tr>
+{% for a in accounts %}
+<tr>
+    <td>{{ a.Account_No }}</td>
+    <td>{{ a.Type }}</td>
+    <td>{{ a.Balance }}</td>
+    <td>{{ a.Customer_Name }}</td>
+    <td>{{ a.Branch_Name }}</td>
+</tr>
+{% endfor %}
+</table>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deposit Money</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f5e9;
+            text-align: center;
+            padding: 40px;
+        }
+        form {
+            background-color: white;
+            display: inline-block;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        select, input {
+            margin: 10px;
+            padding: 10px;
+            width: 250px;
+            font-size: 14px;
+        }
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        input[type="submit"]:hover {
+            background-color: #1e7e34;
+        }
+        h2 {
+            color: #1b5e20;
+        }
+    </style>
+</head>
+<body>
+    <h2>💰 Deposit Money</h2>
+    <form method="post">
+        <select name="acc_no" required>
+            {% for account in accounts %}
+                <option value="{{ account.Account_No }}">
+                    {{ account.Account_No }} - {{ account.customer_name }} (Balance: {{ account.Balance }})
+                </option>
+            {% endfor %}
+        </select><br>
+        <input type="number" name="amount" step="0.01" placeholder="Enter Amount" required><br>
+        <input type="submit" value="Deposit">
+    </form>
+</body>
+</html>
